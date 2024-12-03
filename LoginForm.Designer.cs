@@ -61,7 +61,7 @@
             // btnIniciarSesion
             // 
             this.btnIniciarSesion.BackColor = System.Drawing.Color.Silver;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(100, 225);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(100, 210);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(112, 35);
             this.btnIniciarSesion.TabIndex = 4;
@@ -72,7 +72,7 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnSalir.Location = new System.Drawing.Point(225, 225);
+            this.btnSalir.Location = new System.Drawing.Point(225, 210);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(102, 35);
             this.btnSalir.TabIndex = 5;
@@ -85,7 +85,7 @@
             this.picEye.BackColor = System.Drawing.Color.White;
             this.picEye.Image = global::GestionDe_RRHH.Properties.Resources.ojo_cerrado;
             this.picEye.Location = new System.Drawing.Point(300, 153);
-            this.picEye.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picEye.Margin = new System.Windows.Forms.Padding(4);
             this.picEye.Name = "picEye";
             this.picEye.Size = new System.Drawing.Size(27, 26);
             this.picEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
