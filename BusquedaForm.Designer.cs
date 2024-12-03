@@ -52,24 +52,24 @@
             "Habilidad",
             "Competencia",
             "Departamento"});
-            this.cmbCriterio.Location = new System.Drawing.Point(16, 60);
+            this.cmbCriterio.Location = new System.Drawing.Point(16, 58);
             this.cmbCriterio.Name = "cmbCriterio";
-            this.cmbCriterio.Size = new System.Drawing.Size(200, 21);
+            this.cmbCriterio.Size = new System.Drawing.Size(210, 21);
             this.cmbCriterio.TabIndex = 1;
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(230, 60);
+            this.txtBusqueda.Location = new System.Drawing.Point(16, 100);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(350, 20);
+            this.txtBusqueda.Size = new System.Drawing.Size(400, 20);
             this.txtBusqueda.TabIndex = 2;
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Silver;
-            this.btnBuscar.Location = new System.Drawing.Point(600, 58);
+            this.btnBuscar.Location = new System.Drawing.Point(458, 88);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(80, 30);
+            this.btnBuscar.Size = new System.Drawing.Size(106, 42);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -78,19 +78,19 @@
             // dgvResultados
             // 
             this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultados.Location = new System.Drawing.Point(16, 100);
+            this.dgvResultados.Location = new System.Drawing.Point(16, 150);
             this.dgvResultados.Name = "dgvResultados";
             this.dgvResultados.ReadOnly = true;
             this.dgvResultados.RowHeadersWidth = 51;
             this.dgvResultados.RowTemplate.Height = 24;
-            this.dgvResultados.Size = new System.Drawing.Size(633, 300);
+            this.dgvResultados.Size = new System.Drawing.Size(756, 250);
             this.dgvResultados.TabIndex = 4;
             this.dgvResultados.SelectionChanged += new System.EventHandler(this.dgvResultados_SelectionChanged);
             // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnCerrar.Location = new System.Drawing.Point(700, 420);
+            this.btnCerrar.Location = new System.Drawing.Point(692, 418);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(80, 30);
             this.btnCerrar.TabIndex = 5;
@@ -101,12 +101,13 @@
             // pbFoto
             // 
             this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbFoto.Location = new System.Drawing.Point(668, 100);
+            this.pbFoto.Location = new System.Drawing.Point(597, 9);
             this.pbFoto.Name = "pbFoto";
-            this.pbFoto.Size = new System.Drawing.Size(120, 120);
+            this.pbFoto.Size = new System.Drawing.Size(147, 135);
             this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFoto.TabIndex = 6;
             this.pbFoto.TabStop = false;
+            this.pbFoto.Click += new System.EventHandler(this.pbFoto_Click);
             // 
             // BusquedaForm
             // 

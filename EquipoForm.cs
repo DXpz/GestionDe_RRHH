@@ -37,9 +37,9 @@ namespace GestionDe_RRHH
 
             // Agregar filas
             dt.Rows.Add("Carles Geovanny Rivera Marroquín", "RM101723");
-            dt.Rows.Add("Héctor Antonio Mejía Ascencio", "");
-            dt.Rows.Add("Atilio", "");
-            dt.Rows.Add("Fátima Sarahí Coreas  ", "Ch100723");
+            dt.Rows.Add("Héctor Antonio Mejía Ascencio", "MA100423");
+            dt.Rows.Add("Atilio Gustavo Morataya Serrano", "MS101122");
+            dt.Rows.Add("Fátima Sarahí Coreas Hernandez ", "Ch100723");
 
             // Asignar la tabla al DataGridView
             dgvEquipo.DataSource = dt;

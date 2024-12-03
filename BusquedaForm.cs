@@ -140,5 +140,10 @@ namespace GestionDe_RRHH
                 }
             }
         }
+
+        private void pbFoto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
