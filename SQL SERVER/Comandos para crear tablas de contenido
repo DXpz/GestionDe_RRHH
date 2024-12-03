@@ -1,1 +1,104 @@
+SELECT * FROM Usuarios;
 
+SELECT * FROM Colaboradores;
+
+SELECT * FROM FormacionAcademica;
+
+SELECT * FROM ExperienciaProfesional;
+
+SELECT * FROM Habilidades;
+
+SELECT * FROM Competencias;
+
+SELECT * FROM Referencias;
+
+SELECT * FROM HistorialActividades;
+
+-- Tabla de Usuarios
+CREATE TABLE Usuarios (
+    UsuarioID INT IDENTITY(1,1) PRIMARY KEY, -- Identificador único para cada usuario, autoincremental
+    NombreUsuario NVARCHAR(50) NOT NULL UNIQUE, -- Nombre de usuario único, no puede ser nulo
+    Contraseña NVARCHAR(255) NOT NULL, -- Contraseña del usuario, no puede ser nula
+    Rol NVARCHAR(20) NOT NULL CHECK (Rol IN ('Admin', 'Operador')), -- Rol del usuario (Admin u Operador), con restricción
+    FechaCreacion DATETIME DEFAULT GETDATE() -- Fecha de creación del registro, valor predeterminado de la fecha y hora actual
+);
+GO
+
+-- Tabla de Colaboradores
+CREATE TABLE Colaboradores (
+    ColaboradorID INT IDENTITY(1,1) PRIMARY KEY, -- Identificador único para cada colaborador, autoincremental
+    NombreCompleto NVARCHAR(100) NOT NULL, -- Nombre completo del colaborador, no puede ser nulo
+    Telefono NVARCHAR(15) NOT NULL, -- Número de teléfono del colaborador, no puede ser nulo
+    Email NVARCHAR(100) NOT NULL, -- Correo electrónico del colaborador, no puede ser nulo
+    Departamento NVARCHAR(50) NOT NULL, -- Departamento al que pertenece el colaborador, no puede ser nulo
+    Objetivo NVARCHAR(MAX), -- Objetivo profesional del colaborador, puede ser nulo
+    Foto VARBINARY(MAX), -- Foto del colaborador en formato binario, puede ser nulo
+    EstadoActivo BIT DEFAULT 1, -- Indica si el colaborador está activo (1) o inactivo (0), valor predeterminado de 1
+    FechaIngreso DATETIME DEFAULT GETDATE(), -- Fecha de ingreso del colaborador, valor predeterminado de la fecha y hora actual
+    Puesto NVARCHAR(100) DEFAULT 'Sin Especificar' -- Puesto del colaborador, valor predeterminado de 'Sin Especificar'
+);
+GO
+
+-- Tabla de Formación Académica
+CREATE TABLE FormacionAcademica (
+    FormacionID INT IDENTITY(1,1) PRIMARY KEY, -- Identificador único para cada registro de formación académica, autoincremental
+    ColaboradorID INT NOT NULL, -- Identificador del colaborador, no puede ser nulo
+    Institucion NVARCHAR(100) NOT NULL, -- Nombre de la institución educativa, no puede ser nulo
+    Titulo NVARCHAR(100) NOT NULL, -- Título obtenido, no puede ser nulo
+    AñoInicio INT NOT NULL, -- Año en que comenzó la formación, no puede ser nulo
+    AñoFin INT NOT NULL, -- Año en que finalizó la formación, no puede ser nulo
+    FOREIGN KEY (ColaboradorID) REFERENCES Colaboradores(ColaboradorID) ON DELETE CASCADE -- Clave foránea que referencia a Colaboradores
+);
+GO
+
+-- Tabla de Experiencia Profesional
+CREATE TABLE ExperienciaProfesional (
+    ExperienciaID INT IDENTITY(1,1) PRIMARY KEY, -- Identificador único para cada registro de experiencia profesional, autoincremental
+    ColaboradorID INT NOT NULL, -- Identificador del colaborador, no puede ser nulo
+    Puesto NVARCHAR(100) NOT NULL, -- Puesto desempeñado en la empresa, no puede ser nulo
+    Empresa NVARCHAR(100) NOT NULL, -- Nombre de la empresa donde trabajó el colaborador, no puede ser nulo
+    AñoInicio INT NOT NULL, -- Año en que comenzó la experiencia laboral, no puede ser nulo
+    AñoFin INT NOT NULL, -- Año en que finalizó la experiencia laboral, no puede ser nulo
+    FOREIGN KEY (ColaboradorID) REFERENCES Colaboradores(ColaboradorID) ON DELETE CASCADE -- Clave foránea que referencia a Colaboradores
+);
+GO
+
+-- Tabla de Habilidades
+CREATE TABLE Habilidades (
+    HabilidadID INT IDENTITY(1,1) PRIMARY KEY, -- Identificador único para cada habilidad, autoincremental
+    ColaboradorID INT NOT NULL, -- Identificador del colaborador, no puede ser nulo
+    Habilidad NVARCHAR(100) NOT NULL, -- Descripción de la habilidad, no puede ser nula
+    FOREIGN KEY (ColaboradorID) REFERENCES Colaboradores(ColaboradorID) ON DELETE CASCADE -- Clave foránea que referencia a Colaboradores
+);
+GO
+
+-- Tabla de Competencias
+CREATE TABLE Competencias (
+    CompetenciaID INT IDENTITY(1,1) PRIMARY KEY, -- Identificador único para cada competencia, autoincremental
+    ColaboradorID INT NOT NULL, -- Identificador del colaborador, no puede ser nulo
+    Competencia NVARCHAR(100) NOT NULL, -- Descripción de la competencia, no puede ser nula
+    Dominio NVARCHAR(50) NOT NULL, -- Área de dominio de la competencia, no puede ser nula
+    FOREIGN KEY (ColaboradorID) REFERENCES Colaboradores(ColaboradorID) ON DELETE CASCADE -- Clave foránea que referencia a Colaboradores
+);
+GO
+
+-- Tabla de Referencias
+CREATE TABLE Referencias (
+    ReferenciaID INT IDENTITY(1,1) PRIMARY KEY, -- Identificador único para cada referencia, autoincremental
+    ColaboradorID INT NOT NULL, -- Identificador del colaborador, no puede ser nulo
+    TipoReferencia NVARCHAR(20) NOT NULL CHECK (TipoReferencia IN ('Laboral', 'Personal')), -- Tipo de referencia (Laboral o Personal), con restricción
+    Nombre NVARCHAR(100) NOT NULL, -- Nombre de la persona de referencia, no puede ser nulo
+    Telefono NVARCHAR(15) NOT NULL, -- Número de teléfono de la referencia, no puede ser nulo
+    FOREIGN KEY (ColaboradorID) REFERENCES Colaboradores(ColaboradorID) ON DELETE CASCADE -- Clave foránea que referencia a Colaboradores
+);
+GO
+
+-- Tabla de Historial de Actividades
+CREATE TABLE HistorialActividades (
+    ActividadID INT IDENTITY(1,1) PRIMARY KEY, -- Identificador único para cada actividad, autoincremental
+    UsuarioID INT NOT NULL, -- Identificador del usuario que realizó la actividad, no puede ser nulo
+    Accion NVARCHAR(255) NOT NULL, -- Descripción de la acción realizada, no puede ser nula
+    FechaActividad DATETIME DEFAULT GETDATE(), -- Fecha y hora en que se realizó la actividad, valor predeterminado de la fecha y hora actual
+    FOREIGN KEY (UsuarioID) REFERENCES Usuarios(UsuarioID) -- Clave foránea que referencia a Usuarios
+);
+GO
