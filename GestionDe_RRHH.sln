@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionDe_RRHH", "GestionDe_RRHH.csproj", "{44B662A2-59EE-45A5-997F-D8F7D017FB09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RRHH", "RRHH", "{E1FA2FD6-EBA8-4A5A-BE06-DD352E797D0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44B662A2-59EE-45A5-997F-D8F7D017FB09} = {E1FA2FD6-EBA8-4A5A-BE06-DD352E797D0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C5FD2F3-19D6-4B0D-AF59-F7775AD23997}
