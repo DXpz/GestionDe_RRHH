@@ -16,10 +16,10 @@
             // lblBienvenida
             // 
             this.lblBienvenida.AutoSize = true;
-            this.lblBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenida.Location = new System.Drawing.Point(120, 39);
+            this.lblBienvenida.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenida.Location = new System.Drawing.Point(82, 42);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(320, 24);
+            this.lblBienvenida.Size = new System.Drawing.Size(399, 31);
             this.lblBienvenida.TabIndex = 0;
             this.lblBienvenida.Text = "Bienvenido al sistema de Gestión";
             // 
